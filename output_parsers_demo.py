@@ -55,6 +55,7 @@ class Person(BaseModel):
 
 # llm = init_chat_model(model="ollama:llama3.2",temperature=0)
 llm = init_chat_model(model="openai:gpt-5-nano",temperature=0)
+# llm = init_chat_model(model="google_genai:gemini-3.1-flash-lite",temperature=0.7)
 
 def working_with_pydantic_parser():
     parser = PydanticOutputParser(pydantic_object=Person)
@@ -73,7 +74,7 @@ def working_with_pydantic_parser():
 class MovieReview(BaseModel):
     title:str = Field(description="Title of the movie")
     review:str = Field(description="Review of the movie")
-    rating:str = Field(description="Rating of the movie")
+    rating:int = Field(description="Rating of the movie")
 
 def movie_review():
     structured_model = llm.with_structured_output(MovieReview)    
