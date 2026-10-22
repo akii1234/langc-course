@@ -19,7 +19,7 @@ def main():
     # print(f"Response from OpenAI : {response}")
 
     # Test - Anthropic
-    llm_anthropic = ChatAnthropic(model_name="claude-sonnet-4-5-20250929",temperature=0)
+    llm_anthropic = ChatAnthropic(model_name="claude-haiku-5-5",temperature=0)
     response_anthropic = llm_anthropic.invoke("Say set up complete in one word")
     print(f"Response from Anthropic : {response_anthropic}")
 
